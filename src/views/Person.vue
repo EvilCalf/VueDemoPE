@@ -18,6 +18,9 @@ import { Cell } from 'mint-ui'
 
 export default {
     components: { Cell, Footer },
+    computed: {
+        ...mapGetters(['login','phonenumber'])
+    },
     methods: {
         toCoupons() {
             this.$router.push(`coupons`)
