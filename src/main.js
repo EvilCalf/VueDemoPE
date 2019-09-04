@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './plugins/router'
-import store from './plugins/store'
+import store from './store'
 import './plugins/filter'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'

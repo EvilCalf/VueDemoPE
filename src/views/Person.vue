@@ -2,8 +2,7 @@
     <div class="panel-person">
         <div class="person-info">
             <img src="/images/photo/MrXu.jpg" alt>
-            <!-- 把下面的Mr显示为用户的手机号，如果用户还没有登录，默认显示admin -->
-            <span class="name">{{ ww?"123":"admin" }}</span>
+            <span class="name">{{ login?phonenumble:"admin" }}</span>
         </div>
         <mt-cell @click="toCoupons" title="卡券包" icon="more" value="带 icon"></mt-cell>
         <mt-cell title="收藏地址" icon="more" value="带 icon"></mt-cell>
@@ -13,21 +12,19 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import Footer from '@/components/_footer'
 import { Cell } from 'mint-ui'
+
 export default {
-    data(){
-        return{
-            ww:11
-        }
-    },
     components: { Cell, Footer },
     methods: {
         toCoupons() {
             this.$router.push(`coupons`)
         }
-    }
+    },
 }
+
 </script>
 
 <style lang="stylus">

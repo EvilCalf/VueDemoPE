@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from './store'
-
+import store from '../store'
+import { mapGetters } from 'vuex'
 
 const ShopDetail = () => import(/* webpackChunkName: "shopDetail" */ '@/views/ShopDetail.vue')
 const Evaluation = () => import(/* webpackChunkName: "evaluation" */ '@/views/Evaluation.vue')
@@ -68,7 +68,9 @@ const router = new Router({
 })
 // 判断是否需要登录
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !store.state.login) {
+  var flag=store.dispatch('users/putLogin')
+  console.log(flag)
+  if (to.meta.requiresAuth && !flag) {
     next({
       path: '/login'
     })

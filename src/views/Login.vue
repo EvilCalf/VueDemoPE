@@ -3,7 +3,7 @@
     <div class='login'>
       <img src="../assects/images/icon/logo.png" alt="一龄图标">
       <div class="input-panel">
-        <input type="text" placeholder="请输入手机号">
+        <input type="text" placeholder="请输入手机号" name="phone" value="158691985025">
       </div>
       <div class="input-panel">
         <input type="text" placeholder="请输入验证码">
@@ -15,6 +15,7 @@
   </div>
 </template>
 <script>
+import store from '../store'
 export default {
   name: 'login',
   data() {
@@ -23,7 +24,7 @@ export default {
   },
   methods: {
     goback() {
-      this.$store.commit('login');
+      store.dispatch('users/login')
       this.$router.go(-1)
     }
   }

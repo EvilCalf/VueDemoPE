@@ -77,10 +77,10 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("getShops").then(res => {
+    this.$store.dispatch("users/getShops").then(res => {
       this.shops = res.data;
     });
-    this.$store.dispatch("getPlayList").then(res => {
+    this.$store.dispatch("users/getPlayList").then(res => {
       this.playList = res.data;
     });
   }
