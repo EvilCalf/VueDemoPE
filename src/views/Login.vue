@@ -3,7 +3,7 @@
     <div class='login'>
       <img src="../assects/images/icon/logo.png" alt="一龄图标">
       <div class="input-panel">
-        <input type="text" placeholder="请输入手机号" name="phone" value="158691985025">
+        <input type="text" placeholder="请输入手机号" ref="phone">
       </div>
       <div class="input-panel">
         <input type="text" placeholder="请输入验证码">
@@ -20,11 +20,13 @@ export default {
   name: 'login',
   data() {
     return {
+      phone:""
     }
   },
   methods: {
     goback() {
-      store.dispatch('users/login')
+      var phonenumber=this.$refs.phone.value
+      store.dispatch('users/login',phonenumber)
       this.$router.go(-1)
     }
   }

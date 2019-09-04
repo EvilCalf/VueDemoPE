@@ -68,9 +68,7 @@ const router = new Router({
 })
 // 判断是否需要登录
 router.beforeEach((to, from, next) => {
-  var flag=store.dispatch('users/putLogin')
-  console.log(flag)
-  if (to.meta.requiresAuth && !flag) {
+  if (to.meta.requiresAuth && !store.getters.login) {
     next({
       path: '/login'
     })
