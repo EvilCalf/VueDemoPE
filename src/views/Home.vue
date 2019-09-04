@@ -4,7 +4,7 @@
       <div class="play-list">
         <mt-swipe :auto="4000">
           <mt-swipe-item v-for="item in playList" :key="item.img">
-            <img :src="item.img" alt="轮播图图片">
+            <img :src="item.img" alt="轮播图图片" />
           </mt-swipe-item>
         </mt-swipe>
       </div>
@@ -16,7 +16,7 @@
       <div class="xsg-shop">
         <div class="item-panel" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
           <span>{{item.icon}}</span>
-          <img :src="item.img" alt="商品">
+          <img :src="item.img" alt="商品" />
           <div class="title">{{item.title}}</div>
           <div class="describe">{{item.describe}}</div>
           <div class="price">¥{{item.price}}</div>
@@ -26,29 +26,20 @@
         <div class="yqyl">
           <div>邀请有礼</div>
           <div>邀请好友有礼物</div>
-          <img src="../assects/images/icon/yaoqingyouli.png" alt="邀请有礼">
+          <img src="../assects/images/icon/yaoqingyouli.png" alt="邀请有礼" />
         </div>
         <div class="lqyh" @click="toCoupons">
           <div>领券优惠</div>
           <div>领取神券有优惠</div>
-          <img src="../assects/images/icon/lingquanyouhui.png" alt="领券优惠">
+          <img src="../assects/images/icon/lingquanyouhui.png" alt="领券优惠" />
         </div>
       </div>
       <div class="xsg-title">猜你喜欢</div>
 
-
-      <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
-        <div class="item-panel">
-          <span>{{item.icon}}</span>
-          <img :src="item.img" alt="商品">
-          <div class="title">{{item.title}}</div>
-          <div class="describe">{{item.describe}}</div>
-          <div class="price">¥{{item.price}}</div>
-        </div>
+      <div>
+        <myitemshopcomponent :shops="shops" :widthData="widthData">
+        </myitemshopcomponent>
       </div>
-
-
-
     </div>
     <Footer></Footer>
   </div>
@@ -56,19 +47,22 @@
 <script>
 import { Swipe, SwipeItem } from "mint-ui";
 import Footer from "@/components/_footer";
+import myitemshopcomponent from "@/components/itemshop";
 export default {
   name: "home",
-  components: { Swipe, SwipeItem, Footer },
+  components: { Swipe, SwipeItem, Footer, myitemshopcomponent },
   data() {
     return {
       vuegConfig: {
         forwardAnim: "fadeIn" //前进动画，默认为fadeInRight
       },
       playList: [],
-      shops: []
+      shops: [],
+      widthData: 2
     };
   },
   methods: {
+    
     tapDetail(item) {
       this.$router.push(`shopdetail/${item.id}`);
     },
@@ -84,10 +78,10 @@ export default {
       this.playList = res.data;
     });
   }
-};
+}
 </script>
 <style lang="stylus">
-.home  {
+.home {
   .page-wrap {
     overflow: auto;
     height: 100%;
@@ -180,23 +174,6 @@ export default {
     img {
       margin-top: 0.2rem;
       height: 1rem;
-    }
-  }
-
-  .item-shop {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    padding-bottom: 4px;
-    position: relative;
-
-    .item-panel {
-      overflow: hidden;
-      margin: 0 0.1rem;
-
-      img {
-        width: 100%;
-      }
     }
   }
 }
