@@ -1,6 +1,6 @@
 <template>
   <div id="myitemshopcomponent">
-    <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)" v-bind:style="{width: widthData}">
+    <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)" :style="{width:WidthStyle}">
       <div class="item-panel">
         <span>{{item.icon}}</span>
         <img :src="item.img" alt="商品" />
@@ -17,16 +17,17 @@ export default {
   props: {
     widthData: Number,
     shops: Array,
+    WidthStyle:
+    {
+      type: String,
+      default: '100%'
+    }
   },
   methods: {
     tapDetail(item) {
       this.$router.push(`shopdetail/${item.id}`);
     },
-    created() {
-      this.$store.dispatch("users/getShops").then(res => {
-        this.shops = res.data;
-      });
-    }
+
   }
 };
 </script>

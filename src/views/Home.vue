@@ -37,7 +37,7 @@
       <div class="xsg-title">猜你喜欢</div>
 
       <div>
-        <myitemshopcomponent :shops="shops" :widthData="widthData">
+        <myitemshopcomponent :shops="shops" :widthData="widthData" :WidthStyle=WidthStyle>
         </myitemshopcomponent>
       </div>
     </div>
@@ -58,7 +58,8 @@ export default {
       },
       playList: [],
       shops: [],
-      widthData: 2
+      widthData: 200,
+      WidthStyle: '50%'
     };
   },
   methods: {
