@@ -1,33 +1,37 @@
 <template>
-  <div class='dg-login'>
-    <div class='login'>
-      <img src="../assects/images/icon/logo.png" alt="一龄图标">
+  <div class="dg-login">
+    <div class="login">
+      <img src="../assects/images/icon/logo.png" alt="一龄图标" />
       <div class="input-panel">
-        <input type="text" placeholder="请输入手机号" ref="phone">
+        <input type="text" placeholder="请输入手机号" ref="phone" />
       </div>
       <div class="input-panel">
-        <input type="text" placeholder="请输入验证码">
+        <input type="text" placeholder="请输入验证码" />
         <mt-button type="default" size="small">获取验证码</mt-button>
       </div>
-      <mt-button type="primary" class="mint-button--yellow"  size="large" @click="goback()">登陆</mt-button>
-      <div class="agreement">登陆即代表您已同意<span class="text">《用户注册协议》</span>和<span class="text">《隐私政策》</span></div>
+      <mt-button type="primary" class="mint-button--yellow" size="large" @click="goback()">登陆</mt-button>
+      <div class="agreement">
+        登陆即代表您已同意
+        <span class="text">《用户注册协议》</span>和
+        <span class="text">《隐私政策》</span>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import store from '../store'
+import store from "../store";
 export default {
-  name: 'login',
+  name: "login",
   data() {
     return {
-      phone:""
-    }
+      phone: ""
+    };
   },
   methods: {
     goback() {
-      var phonenumber=this.$refs.phone.value
-      store.dispatch('users/login',phonenumber)
-      this.$router.go(-1)
+      var phonenumber = this.$refs.phone.value;
+      store.dispatch("users/login", phonenumber);
+      this.$router.go(-1);
     }
   }
 };
@@ -39,13 +43,13 @@ export default {
   width: 100vw;
 
   .login {
-    padding-top: .6rem;
+    padding-top: 0.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: white;
-    
+
     img {
       width: 2rem;
       margin-bottom: 0.6rem;
@@ -76,5 +80,4 @@ export default {
     }
   }
 }
-
 </style>

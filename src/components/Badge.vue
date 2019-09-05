@@ -1,8 +1,6 @@
 <template>
   <span class="yl-badge">
-    <slot>
-      {{text}}
-    </slot>
+    <slot>{{text}}</slot>
   </span>
 </template>
 <script>

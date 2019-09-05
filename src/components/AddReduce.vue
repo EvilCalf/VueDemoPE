@@ -20,15 +20,15 @@ export default {
     }
   },
   data() {
-      return {
-          greyColor: '#666'
-      }
+    return {
+      greyColor: "#666"
+    };
   },
   watch: {
-      num(newVal) {
-          if (newVal === 1) this.greyColor = '#999'
-          else this.greyColor = '#666'
-      }
+    num(newVal) {
+      if (newVal === 1) this.greyColor = "#999";
+      else this.greyColor = "#666";
+    }
   },
   methods: {
     handleClick(eventName) {
@@ -42,7 +42,7 @@ export default {
     } */
   },
   created() {
-      if (this.num === 1) this.greyColor = '#999'
+    if (this.num === 1) this.greyColor = "#999";
   }
 };
 </script>

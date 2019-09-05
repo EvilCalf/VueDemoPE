@@ -37,8 +37,7 @@
       <div class="xsg-title">猜你喜欢</div>
 
       <div>
-        <myitemshopcomponent :shops="shops" :widthData="widthData" :WidthStyle=WidthStyle>
-        </myitemshopcomponent>
+        <myitemshopcomponent :shops="shops" :widthData="widthData" :WidthStyle="WidthStyle"></myitemshopcomponent>
       </div>
     </div>
     <Footer></Footer>
@@ -59,11 +58,10 @@ export default {
       playList: [],
       shops: [],
       widthData: 200,
-      WidthStyle: '50%'
+      WidthStyle: "50%"
     };
   },
   methods: {
-    
     tapDetail(item) {
       this.$router.push(`shopdetail/${item.id}`);
     },
@@ -79,7 +77,7 @@ export default {
       this.playList = res.data;
     });
   }
-}
+};
 </script>
 <style lang="stylus">
 .home {

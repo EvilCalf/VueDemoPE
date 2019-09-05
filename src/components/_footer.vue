@@ -1,9 +1,9 @@
 <template>
-  <div id="_footer" @click.stop='tabClick'>
+  <div id="_footer" @click.stop="tabClick">
     <mt-tabbar v-model="selected" fixed>
-      <mt-tab-item  :id="item.id" v-for="item in footerList" :key="item.id">
-        <img v-if="selected == item.id" slot="icon" :src="item.selected">
-        <img v-else slot="icon" :src="item.img">
+      <mt-tab-item :id="item.id" v-for="item in footerList" :key="item.id">
+        <img v-if="selected == item.id" slot="icon" :src="item.selected" />
+        <img v-else slot="icon" :src="item.img" />
         {{item.name}}
       </mt-tab-item>
     </mt-tabbar>
@@ -25,29 +25,32 @@ export default {
   components: { Tabbar, TabItem },
   data() {
     return {
-      selected: '',
+      selected: "",
       footerList: [
-        { id: 'index', name: '首页', img: Index, selected: IndexC},
-        { id: 'car', name: '购物车', img: Car, selected: CarC},
-        { id: 'orderlist', name: '订单', img: OrderList, selected: OrderListC},
-        { id: 'person', name: '我的', img: Person, selected: PersonC}
+        { id: "index", name: "首页", img: Index, selected: IndexC },
+        { id: "car", name: "购物车", img: Car, selected: CarC },
+        { id: "orderlist", name: "订单", img: OrderList, selected: OrderListC },
+        { id: "person", name: "我的", img: Person, selected: PersonC }
       ]
-    }
+    };
   },
   methods: {
     tabClick() {
-      this.defautIcon()
-      this.$router.push({path: `/${this.selected}`})
+      this.defautIcon();
+      this.$router.push({ path: `/${this.selected}` });
     },
     defautIcon() {
-      this.footerList.map( (value) => {
-        value.img = value.img
-        if (value.id == this.selected) value.img = value.selected
-      })
+      this.footerList.map(value => {
+        value.img = value.img;
+        if (value.id == this.selected) value.img = value.selected;
+      });
     }
   },
   created() {
-    this.selected = this.$route.path.split('/')[1] === '' ? 'index' : this.$route.path.split('/')[1]
+    this.selected =
+      this.$route.path.split("/")[1] === ""
+        ? "index"
+        : this.$route.path.split("/")[1];
     // this.defautIcon()
   }
 };

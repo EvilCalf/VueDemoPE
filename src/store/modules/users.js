@@ -32,7 +32,7 @@ const actions = {
     return axios.get(`/data/coupons.json`)
   },
   login({ commit }, phonenumber) {
-    if(phonenumber=="") phonenumber="admin"
+    if (phonenumber == "") phonenumber = "admin"
     commit('SET_LOGIN', true)
     commit('SET_PHONENUMBER', phonenumber)
   }

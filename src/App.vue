@@ -1,18 +1,18 @@
 <template>
-    <div id="app">
-        <transition name="router-fade">
-            <router-view></router-view>
-        </transition>
-    </div>
+  <div id="app">
+    <transition name="router-fade">
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 
 <style lang="stylus">
 .router-fade-enter-active, .router-fade-leave-active {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .router-fade-enter, .router-fade-leave-active {
-    opacity: 0;
+  opacity: 0;
 }
 </style>
 

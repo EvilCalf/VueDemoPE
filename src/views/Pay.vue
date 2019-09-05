@@ -7,18 +7,18 @@
           <span class="tel">12345678910</span>
         </div>
         <div class="bottom">
-          <img src="../assects/images/icon/address.png" alt>
+          <img src="../assects/images/icon/address.png" alt />
           <span>北京市,通州区</span>
         </div>
       </div>
       <div class="right">
-        <img src="../assects/images/icon/right-icon.png" alt>
+        <img src="../assects/images/icon/right-icon.png" alt />
       </div>
     </div>
-    <img class="caitiao" src="../assects/images/decorate/caitiao.png" alt>
+    <img class="caitiao" src="../assects/images/decorate/caitiao.png" alt />
     <div class="canku-title">一龄直营仓</div>
     <div class="shop-content">
-      <img src="/images/shops/1.jpg" alt>
+      <img src="/images/shops/1.jpg" alt />
       <div class="middle">
         <div class="name">植萃精华气色BB霜</div>
         <div class="price">￥928.00</div>
@@ -78,7 +78,7 @@ import YlFloat from "@/components/Float";
 import YlCell from "@/components/Cell";
 import YlCoupons from "@/components/Coupons";
 import { Toast } from "mint-ui";
-import  WxIcon from "../assects/images/icon/wx-icon.png";
+import WxIcon from "../assects/images/icon/wx-icon.png";
 export default {
   components: { YlFloat, YlCell, YlCoupons, Toast },
   data() {
@@ -96,7 +96,7 @@ export default {
       Toast("功能开发中");
     },
     toPaySuccess() {
-      this.$router.push('/paysuccess')
+      this.$router.push("/paysuccess");
     }
   },
   created() {
@@ -139,11 +139,12 @@ export default {
         }
       }
     }
+
     .right {
-        img {
-            height .3rem
-        }
-        }
+      img {
+        height: 0.3rem;
+      }
+    }
   }
 
   .caitiao {

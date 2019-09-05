@@ -2,44 +2,50 @@
   <div class="panel-shop-detail">
     <yl-header>
       <div slot="title" class="shop-detail-title">
-        <a :class="{active : pageActive==1}" @click="pageClick(1)" >商品</a>
-        <a :class="{active : pageActive==2}" @click="pageClick(2)" >详情</a>
+        <a :class="{active : pageActive==1}" @click="pageClick(1)">商品</a>
+        <a :class="{active : pageActive==2}" @click="pageClick(2)">详情</a>
       </div>
-      <img slot="right" @click="gohome" src="../assects/images/icon/home.png" alt>
+      <img slot="right" @click="gohome" src="../assects/images/icon/home.png" alt />
     </yl-header>
     <div class="play-list">
       <mt-swipe :auto="4000">
         <mt-swipe-item v-for="item in playList" :key="item.img">
-          <img :src="item.img" alt="轮播图图片">
+          <img :src="item.img" alt="轮播图图片" />
         </mt-swipe-item>
       </mt-swipe>
     </div>
-    <div class="v-title">高雅3D水漾修护保湿面膜 <yl-badge>特价</yl-badge></div>
+    <div class="v-title">
+      高雅3D水漾修护保湿面膜
+      <yl-badge>特价</yl-badge>
+    </div>
     <div class="v-describe">全面呵护滋养皮肤，软化和补充水分</div>
     <div class="v-price">¥298.00</div>
     <yl-cell title="商品规格" right="请选择" style="margin-bottom: .2rem;" @click="showPopup('ggPopup')"></yl-cell>
-    <yl-cell title="领券" content="暂无活动" @click="showPopup('couponsPopup')"> 
-      <span slot="content" style="display: block;width: 4.3rem;overflow: scroll;white-space: nowrap;">
-          <span class="yhq-name">不同仓商品测试</span>
-          <span class="yhq-name">不同仓商品测试</span>
+    <yl-cell title="领券" content="暂无活动" @click="showPopup('couponsPopup')">
+      <span
+        slot="content"
+        style="display: block;width: 4.3rem;overflow: scroll;white-space: nowrap;"
+      >
+        <span class="yhq-name">不同仓商品测试</span>
+        <span class="yhq-name">不同仓商品测试</span>
       </span>
     </yl-cell>
     <yl-cell title="活动" content="暂无活动" @click="showPopup('activePopup')"></yl-cell>
     <yl-cell title="运费" content="运费" @click="showPopup('freightPopup')"></yl-cell>
-    <yl-cell title="说明" content="假一赔十" icon ></yl-cell>
+    <yl-cell title="说明" content="假一赔十" icon></yl-cell>
     <yl-cell title="商品评价" style="margin: .2rem 0" to="/evaluation/123">
       <div slot="right" style="display: flex; align-items:center">
-        <span style="display: inline-block;margin-right: 0.2rem; color: #ffc107; font-size: 0.38rem;">★</span>2好评
+        <span
+          style="display: inline-block;margin-right: 0.2rem; color: #ffc107; font-size: 0.38rem;"
+        >★</span>2好评
       </div>
     </yl-cell>
     <!-- 商品规格浮层 -->
-    <mt-popup
-      v-model="ggPopup"
-      position="bottom">
+    <mt-popup v-model="ggPopup" position="bottom">
       <yl-float @close="showPopup('ggPopup')" title="商品" style="margin-bottom: 1rem">
         <div slot="content" class="panel">
           <div class="shop-detail">
-            <img :src="img" alt="商品图片">
+            <img :src="img" alt="商品图片" />
             <div class="describe">
               <div class="price">¥298</div>
               <div class="text">请选择规格属性</div>
@@ -54,36 +60,39 @@
       </yl-float>
     </mt-popup>
     <!-- 优惠券 -->
-    <mt-popup
-      v-model="couponsPopup"
-      position="bottom">
+    <mt-popup v-model="couponsPopup" position="bottom">
       <yl-float @close="showPopup('couponsPopup')" title="优惠券">
         <div slot="content" class="panel">
-          <yl-coupons v-for="item in coupons" :key="item.id" :price="item.price" :minPrice="item.minPrice" :name="item.name" :startTime="item.startTime" :endTime="item.endTime"></yl-coupons>
+          <yl-coupons
+            v-for="item in coupons"
+            :key="item.id"
+            :price="item.price"
+            :minPrice="item.minPrice"
+            :name="item.name"
+            :startTime="item.startTime"
+            :endTime="item.endTime"
+          ></yl-coupons>
         </div>
       </yl-float>
     </mt-popup>
     <!-- 活动 -->
-    <mt-popup
-      v-model="activePopup"
-      position="bottom">
+    <mt-popup v-model="activePopup" position="bottom">
       <yl-float @close="showPopup('activePopup')" title="活动说明">
-        <div slot="content" class="panel">
-          暂无活动
-        </div>
+        <div slot="content" class="panel">暂无活动</div>
       </yl-float>
     </mt-popup>
     <!-- 运费 -->
-    <mt-popup
-      v-model="freightPopup"
-      position="bottom">
+    <mt-popup v-model="freightPopup" position="bottom">
       <yl-float @close="showPopup('freightPopup')" title="运费说明">
-        <div slot="content" class="panel">
-          暂无运费说明
-        </div>
+        <div slot="content" class="panel">暂无运费说明</div>
       </yl-float>
     </mt-popup>
-    <car-footer @customer="customer" @shopCar="shopCar" @addCar="showPopup('ggPopup')" @pay="showPopup('ggPopup')" ></car-footer>
+    <car-footer
+      @customer="customer"
+      @shopCar="shopCar"
+      @addCar="showPopup('ggPopup')"
+      @pay="showPopup('ggPopup')"
+    ></car-footer>
   </div>
 </template>
 <script>
@@ -96,7 +105,16 @@ import YlCoupons from "@/components/Coupons";
 import AddReduce from "@/components/AddReduce";
 import { MessageBox, Toast } from "mint-ui";
 export default {
-  components: { YlCell, YlHeader, YlBadge, YlFloat, CarFooter, YlCoupons, AddReduce, Toast },
+  components: {
+    YlCell,
+    YlHeader,
+    YlBadge,
+    YlFloat,
+    CarFooter,
+    YlCoupons,
+    AddReduce,
+    Toast
+  },
   data() {
     return {
       pageActive: 1,
@@ -112,27 +130,27 @@ export default {
   },
   methods: {
     gohome() {
-      this.$router.push('/index')
+      this.$router.push("/index");
     },
     add() {
-      this.num++
+      this.num++;
     },
     reduce() {
-      if (this.num > 1) this.num--
+      if (this.num > 1) this.num--;
     },
     shopCar() {
-      this.$router.push(`/car`)
+      this.$router.push(`/car`);
     },
     addCar() {
-      if (!this.$store.state.login) this.$router.push(`/login`)
+      if (!this.$store.state.login) this.$router.push(`/login`);
       else {
-        this.ggPopup = !this.ggPopup
-        Toast('成功加入购物车')
+        this.ggPopup = !this.ggPopup;
+        Toast("成功加入购物车");
       }
     },
     pay() {
-      if (!this.$store.state.login) this.$router.push(`/login`)
-      else this.$router.push(`/pay`)
+      if (!this.$store.state.login) this.$router.push(`/login`);
+      else this.$router.push(`/pay`);
     },
     customer() {
       MessageBox({
@@ -153,10 +171,10 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("getPlayList").then(res => {
+    this.$store.dispatch("users/getPlayList").then(res => {
       this.playList = res.data;
     });
-    this.$store.dispatch("getCouponList").then(res => {
+    this.$store.dispatch("users/getCouponList").then(res => {
       this.coupons = res.data;
     });
   }
@@ -165,7 +183,8 @@ export default {
 
 <style lang="stylus">
 .panel-shop-detail {
-  margin-bottom 1.2rem
+  margin-bottom: 1.2rem;
+
   .panel {
     display: flex;
     flex-direction: column;

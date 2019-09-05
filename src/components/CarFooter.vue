@@ -2,11 +2,11 @@
   <div class="footer-panel">
     <div class="car-footer">
       <div class="icon-panel" @click="handleClick('customer')">
-        <img src="../assects/images/icon/kefu.png" alt="客服">
+        <img src="../assects/images/icon/kefu.png" alt="客服" />
         <div>客服</div>
       </div>
       <div class="icon-panel" @click="handleClick('shopCar')">
-        <img src="../assects/images/icon/car.png" alt="购物车">
+        <img src="../assects/images/icon/car.png" alt="购物车" />
         <div>购物车</div>
       </div>
       <div class="add-car" @click="handleClick('addCar')">加入购物车</div>
@@ -27,19 +27,18 @@ export default {
 
 <style lang="stylus">
 .footer-panel {
-  display flex
+  display: flex;
   position: fixed;
   width: 100vw;
-  left 0
-  bottom 0
-  height 1rem
-  background white
-
+  left: 0;
+  bottom: 0;
+  height: 1rem;
+  background: white;
 
   .car-footer {
     display: flex;
     align-items: center;
-    border-top: 0.01rem solid rgba(153, 153, 153, .9);
+    border-top: 0.01rem solid rgba(153, 153, 153, 0.9);
     height: 1rem;
 
     .icon-panel {
@@ -48,7 +47,7 @@ export default {
       justify-content: space-around;
       align-items: center;
       flex: 1;
-      border-right: 0.01rem solid rgba(153, 153, 153, .9);
+      border-right: 0.01rem solid rgba(153, 153, 153, 0.9);
       height: 100%;
       width: 2rem;
 
