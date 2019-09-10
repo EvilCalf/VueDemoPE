@@ -22,11 +22,6 @@
 import store from "../store";
 export default {
   name: "login",
-  data() {
-    return {
-      phone: ""
-    };
-  },
   methods: {
     goback() {
       var phoneNumber = this.$refs.phone.value;
