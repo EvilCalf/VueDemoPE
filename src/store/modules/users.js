@@ -2,15 +2,15 @@ import axios from '../../plugins/axios'
 
 const state = {
   login: false,
-  phonenumber: "15869185025",
+  phoneNumber: "15869185025",
 }
 
 const mutations = {
   SET_LOGIN: (state, login) => {
     state.login = login
   },
-  SET_PHONENUMBER: (state, phonenumber) => {
-    state.phonenumber = phonenumber
+  SET_phoneNumber: (state, phoneNumber) => {
+    state.phoneNumber = phoneNumber
   },
 }
 
@@ -31,10 +31,10 @@ const actions = {
   getCouponList() {
     return axios.get(`/data/coupons.json`)
   },
-  login({ commit }, phonenumber) {
-    if (phonenumber == "") phonenumber = "admin"
+  login({ commit }, phoneNumber) {
+    if (phoneNumber == "") phoneNumber = "admin"
     commit('SET_LOGIN', true)
-    commit('SET_PHONENUMBER', phonenumber)
+    commit('SET_phoneNumber', phoneNumber)
   }
 }
 

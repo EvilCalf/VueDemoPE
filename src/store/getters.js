@@ -1,6 +1,6 @@
 const getters = {
 
-    phonenumber: state => state.users.phonenumber,
+    phoneNumber: state => state.users.phoneNumber,
     login: state => state.users.login
 
 }

@@ -37,7 +37,7 @@
       <div class="xsg-title">猜你喜欢</div>
 
       <div>
-        <myitemshopcomponent :shops="shops" :widthData="widthData" :WidthStyle="WidthStyle"></myitemshopcomponent>
+        <Itemshop :shops="shops" :widthData="widthData" :WidthStyle="WidthStyle"></Itemshop>
       </div>
     </div>
     <Footer></Footer>
@@ -46,10 +46,10 @@
 <script>
 import { Swipe, SwipeItem } from "mint-ui";
 import Footer from "@/components/_footer";
-import myitemshopcomponent from "@/components/itemshop";
+import Itemshop from "@/components/itemshop";
 export default {
   name: "home",
-  components: { Swipe, SwipeItem, Footer, myitemshopcomponent },
+  components: { Swipe, SwipeItem, Footer, Itemshop },
   data() {
     return {
       vuegConfig: {

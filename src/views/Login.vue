@@ -29,8 +29,8 @@ export default {
   },
   methods: {
     goback() {
-      var phonenumber = this.$refs.phone.value;
-      store.dispatch("users/login", phonenumber);
+      var phoneNumber = this.$refs.phone.value;
+      store.dispatch("users/login", phoneNumber);
       this.$router.go(-1);
     }
   }

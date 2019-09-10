@@ -2,7 +2,7 @@
   <div class="panel-person">
     <div class="person-info">
       <img src="/images/photo/MrXu.jpg" alt />
-      <span class="name">{{ phonenumber }}</span>
+      <span class="name">{{ phoneNumber }}</span>
     </div>
     <mt-cell @click="toCoupons" title="卡券包" icon="more" value="带 icon"></mt-cell>
     <mt-cell title="收藏地址" icon="more" value="带 icon"></mt-cell>
@@ -19,7 +19,7 @@ import { Cell } from "mint-ui";
 export default {
   components: { Cell, Footer },
   computed: {
-    ...mapGetters(["phonenumber"])
+    ...mapGetters(["phoneNumber"])
   },
   methods: {
     toCoupons() {
